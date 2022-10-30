@@ -31,11 +31,13 @@ const Sidebar: FC<Props> = (props: Props) => {
       if (isResizing) {
         if (props.direction == Position.left) {
           // set the new sidebar width to = current X coordinate of mouse (X) - left X coordinate of sidebar
-          setSidebarWidth(mouseMoveEvent.clientX - sidebarRef.current.getBoundingClientRect().left);
+          const Left: any = sidebarRef.current ?? 0;
+          if(Left) setSidebarWidth(mouseMoveEvent.clientX - Left.getBoundingClientRect().left);
         } else if (props.direction == Position.right) {
           // set the new sidebar width to = Right X coordinate of sidebar - current X coordinate of mouse (X)
-          setSidebarWidth(
-            sidebarRef.current.getBoundingClientRect().right - mouseMoveEvent.clientX
+          const Right: any = sidebarRef.current ?? 0;
+          if(Right) setSidebarWidth(
+            Right.getBoundingClientRect().right - mouseMoveEvent.clientX
           );
         }
       }
