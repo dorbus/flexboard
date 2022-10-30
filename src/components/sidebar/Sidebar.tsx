@@ -10,6 +10,7 @@ interface Props {
   children?: ReactElement;
   minWidth?: number;
   maxWidth?: number;
+  draggable?: boolean;
 }
 
 const Sidebar: FC<Props> = (props: Props) => {
@@ -69,7 +70,7 @@ const Sidebar: FC<Props> = (props: Props) => {
             }}
           >
             <div className="app-sidebar-content">{props.children ? props.children : <></>}</div>
-            <div className="app-sidebar-resizer" onMouseDown={startResizing} />
+            {props.draggable && <div className="app-sidebar-resizer" onMouseDown={startResizing} />}
           </div>
           <div className="app-frame" />
         </>
@@ -85,7 +86,7 @@ const Sidebar: FC<Props> = (props: Props) => {
               return e.preventDefault();
             }}
           >
-            <div className="app-sidebar-resizer" onMouseDown={startResizing} />
+            {props.draggable && <div className="app-sidebar-resizer" onMouseDown={startResizing} />}
             <div className="app-sidebar-content">{props.children ? props.children : <></>}</div>
           </div>
         </>
@@ -97,7 +98,8 @@ const Sidebar: FC<Props> = (props: Props) => {
 Sidebar.defaultProps = {
   direction: Position.left,
   minWidth: 150,
-  maxWidth: 300
+  maxWidth: 300,
+  draggable: false
 };
 
 export default Sidebar;
