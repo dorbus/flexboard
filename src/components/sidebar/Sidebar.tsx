@@ -1,9 +1,14 @@
-import React, { FC } from 'react';
+import React, { FC } from 'react'; // import React and FunctionalComponent from React
 import { useState, useEffect, useRef, useCallback } from 'react'; // importing Hooks
 
 import './Sidebar.styles.css'; // importing sidebar styles
+import { Position } from './Sidebar.enums'; // importing Sidebar enums
 
-const Sidebar: FC = () => {
+interface Props {
+  direction: Position;
+}
+
+const Sidebar: FC<Props> = (props: Props) => {
   // states
   const sidebarRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false);
@@ -23,8 +28,13 @@ const Sidebar: FC = () => {
   const resize = useCallback(
     (mouseMoveEvent: any) => {
       if (isResizing) {
-        // set the new sidebar width to = current X coordinate of mouse (X) - left X coordinate of sidebar
-        setSidebarWidth(mouseMoveEvent.clientX - sidebarRef.current.getBoundingClientRect().left);
+        if (props.direction == Position.left) {
+          // set the new sidebar width to = current X coordinate of mouse (X) - left X coordinate of sidebar
+          setSidebarWidth(mouseMoveEvent.clientX - sidebarRef.current.getBoundingClientRect().left);
+        } else if (props.direction == Position.right) {
+          // set the new sidebar width to = Right X coordinate of sidebar - current X coordinate of mouse (X)
+          setSidebarWidth(sidebarRef.current.getBoundingClientRect().right - mouseMoveEvent.clientX);
+        }
       }
     },
     [isResizing]
@@ -42,15 +52,32 @@ const Sidebar: FC = () => {
 
   return (
     <div className="app-container">
-      <div
-        ref={sidebarRef}
-        className="app-sidebar"
-        style={{ width: sidebarWidth }}
-        onMouseDown={(e) => e.preventDefault()}>
-        <div className="app-sidebar-content" />
-        <div className="app-sidebar-resizer" onMouseDown={startResizing} />
-      </div>
-      <div className="app-frame" />
+      {props.direction == Position.left && (
+        <>
+          <div
+            ref={sidebarRef}
+            className="app-sidebar"
+            style={{ width: sidebarWidth }}
+            onMouseDown={(e) => e.preventDefault()}>
+            <div className="app-sidebar-content" />
+            <div className="app-sidebar-resizer" onMouseDown={startResizing} />
+          </div>
+          <div className="app-frame" />
+        </>
+      )}
+      {props.direction == Position.right && (
+        <>
+            <div className="app-frame" />
+            <div
+              ref={sidebarRef}
+              className="app-sidebar"
+              style={{ width: sidebarWidth }}
+              onMouseDown={(e) => e.preventDefault()}>
+              <div className="app-sidebar-resizer" onMouseDown={startResizing} />
+              <div className="app-sidebar-content"></div>
+            </div>
+        </>
+      )}
     </div>
   );
 };
