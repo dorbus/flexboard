@@ -1,6 +1,7 @@
 import React from 'react';
 import { FC } from 'react';
 import { useState, useEffect, useRef } from 'react';
+import './Sidebar.styles.css';
 
 const Sidebar: FC = () => {
   const sidebarRef = useRef(null);
@@ -46,6 +47,6 @@ const Sidebar: FC = () => {
       <div className="app-frame" />
     </div>
   );
-}
+};
 
 export default Sidebar;
