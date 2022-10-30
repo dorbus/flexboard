@@ -8,8 +8,8 @@ import { Position } from './Sidebar.enums';
 interface Props {
   direction: Position;
   children: ReactElement;
-  min?: Number;
-  max?: Number;
+  minWidth?: number;
+  maxWidth?: number;
 }
 
 const Sidebar: FC<Props> = (props: Props) => {
@@ -63,10 +63,11 @@ const Sidebar: FC<Props> = (props: Props) => {
           <div
             ref={sidebarRef}
             className="app-sidebar"
-            style={{ width: sidebarWidth, minWidth: props.min, maxWidth: props.max }}
+            style={{ width: sidebarWidth, minWidth: props.minWidth, maxWidth: props.maxWidth }}
             onMouseDown={(e) => {
               return e.preventDefault();
-            }}>
+            }}
+          >
             <div className="app-sidebar-content">{props.children}</div>
             <div className="app-sidebar-resizer" onMouseDown={startResizing} />
           </div>
@@ -79,10 +80,11 @@ const Sidebar: FC<Props> = (props: Props) => {
           <div
             ref={sidebarRef}
             className="app-sidebar"
-            style={{ width: sidebarWidth, minWidth: props.min, maxWidth: props.max }}
+            style={{ width: sidebarWidth, minWidth: props.minWidth, maxWidth: props.maxWidth }}
             onMouseDown={(e) => {
               return e.preventDefault();
-            }}>
+            }}
+          >
             <div className="app-sidebar-resizer" onMouseDown={startResizing} />
             <div className="app-sidebar-content">{props.children}</div>
           </div>
@@ -90,6 +92,12 @@ const Sidebar: FC<Props> = (props: Props) => {
       )}
     </div>
   );
+};
+
+Sidebar.defaultProps = {
+  direction: Position.left,
+  minWidth: 150,
+  maxWidth: 300
 };
 
 export default Sidebar;

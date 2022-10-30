@@ -12,7 +12,7 @@ export default {
 // Create a master template for mapping args to render the Button component
 const Template: Story = () => {
   return (
-    <Sidebar direction={Position.right} min={200} max={400}>
+    <Sidebar direction={Position.right} minWidth={200} maxWidth={400}>
       <h3>Sidebar Content</h3>
     </Sidebar>
   );
