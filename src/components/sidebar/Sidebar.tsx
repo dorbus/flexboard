@@ -12,6 +12,7 @@ interface Props {
   minWidth?: number;
   maxWidth?: number;
   draggable?: boolean;
+  sidebarStyle?: React.CSSProperties;
 }
 
 const Sidebar: FC<Props> = (props: Props) => {
@@ -65,7 +66,12 @@ const Sidebar: FC<Props> = (props: Props) => {
           <div
             ref={sidebarRef}
             className="app-sidebar"
-            style={{ width: sidebarWidth, minWidth: props.minWidth, maxWidth: props.maxWidth }}
+            style={{
+              width: sidebarWidth,
+              minWidth: props.minWidth,
+              maxWidth: props.maxWidth,
+              ...props.sidebarStyle
+            }}
             onMouseDown={(e) => {
               return e.preventDefault();
             }}
@@ -82,7 +88,12 @@ const Sidebar: FC<Props> = (props: Props) => {
           <div
             ref={sidebarRef}
             className="app-sidebar"
-            style={{ width: sidebarWidth, minWidth: props.minWidth, maxWidth: props.maxWidth }}
+            style={{
+              width: sidebarWidth,
+              minWidth: props.minWidth,
+              maxWidth: props.maxWidth,
+              ...props.sidebarStyle
+            }}
             onMouseDown={(e) => {
               return e.preventDefault();
             }}
