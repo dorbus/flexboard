@@ -8,6 +8,8 @@ import { Position } from './Sidebar.enums';
 interface Props {
   direction: Position;
   children: ReactElement;
+  min?: Number;
+  max?: Number;
 }
 
 const Sidebar: FC<Props> = (props: Props) => {
@@ -61,7 +63,7 @@ const Sidebar: FC<Props> = (props: Props) => {
           <div
             ref={sidebarRef}
             className="app-sidebar"
-            style={{ width: sidebarWidth }}
+            style={{ width: sidebarWidth, minWidth: props.min, maxWidth: props.max }}
             onMouseDown={(e) => {
               return e.preventDefault();
             }}>
@@ -77,7 +79,7 @@ const Sidebar: FC<Props> = (props: Props) => {
           <div
             ref={sidebarRef}
             className="app-sidebar"
-            style={{ width: sidebarWidth }}
+            style={{ width: sidebarWidth, minWidth: props.min, maxWidth: props.max }}
             onMouseDown={(e) => {
               return e.preventDefault();
             }}>
