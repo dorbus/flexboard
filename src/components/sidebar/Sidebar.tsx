@@ -6,8 +6,8 @@ import './Sidebar.styles.css';
 import { Position } from './Sidebar.enums';
 
 interface Props {
-  direction: Position;
-  children: ReactElement;
+  direction?: Position;
+  children?: ReactElement;
   minWidth?: number;
   maxWidth?: number;
 }
@@ -68,7 +68,7 @@ const Sidebar: FC<Props> = (props: Props) => {
               return e.preventDefault();
             }}
           >
-            <div className="app-sidebar-content">{props.children}</div>
+            <div className="app-sidebar-content">{props.children ? props.children : <></>}</div>
             <div className="app-sidebar-resizer" onMouseDown={startResizing} />
           </div>
           <div className="app-frame" />
@@ -86,7 +86,7 @@ const Sidebar: FC<Props> = (props: Props) => {
             }}
           >
             <div className="app-sidebar-resizer" onMouseDown={startResizing} />
-            <div className="app-sidebar-content">{props.children}</div>
+            <div className="app-sidebar-content">{props.children ? props.children : <></>}</div>
           </div>
         </>
       )}
