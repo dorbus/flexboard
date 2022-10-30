@@ -8,6 +8,7 @@ import { Position } from './Sidebar.enums';
 interface Props {
   direction?: Position;
   children?: ReactElement;
+  width?: number;
   minWidth?: number;
   maxWidth?: number;
   draggable?: boolean;
@@ -17,7 +18,7 @@ const Sidebar: FC<Props> = (props: Props) => {
   // States
   const sidebarRef = useRef<HTMLDivElement>(null);
   const [isResizing, setIsResizing] = useState<boolean>(false);
-  const [sidebarWidth, setSidebarWidth] = useState<number>(268);
+  const [sidebarWidth, setSidebarWidth] = useState<number>(props.width ? props.width : 0);
 
   // Sets isResizing to true
   const startResizing = useCallback(() => {
@@ -97,6 +98,7 @@ const Sidebar: FC<Props> = (props: Props) => {
 
 Sidebar.defaultProps = {
   direction: Position.left,
+  width: 200,
   minWidth: 150,
   maxWidth: 300,
   draggable: false
