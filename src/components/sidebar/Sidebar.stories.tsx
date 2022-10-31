@@ -19,6 +19,7 @@ const Template: Story = () => {
       draggable={true}
       minWidth={50}
       maxWidth={200}
+      gutterWidth={5}
     ></Sidebar>
   );
 };

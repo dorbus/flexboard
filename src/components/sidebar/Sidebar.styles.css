@@ -33,13 +33,11 @@
 .app-sidebar .app-sidebar-resizer {
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 6px;
   justify-self: flex-end;
   cursor: col-resize;
   resize: horizontal;
 }
 
 .app-sidebar .app-sidebar-resizer:hover {
-  width: 3px;
   background: #c1c3c5b4;
 }

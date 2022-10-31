@@ -13,6 +13,7 @@ interface Props {
   maxWidth?: number;
   draggable?: boolean;
   sidebarStyle?: React.CSSProperties;
+  gutterWidth?: number;
 }
 
 const Sidebar: FC<Props> = (props: Props) => {
@@ -77,7 +78,13 @@ const Sidebar: FC<Props> = (props: Props) => {
             }}
           >
             <div className="app-sidebar-content">{props.children ? props.children : <></>}</div>
-            {props.draggable && <div className="app-sidebar-resizer" onMouseDown={startResizing} />}
+            {props.draggable && (
+              <div
+                className="app-sidebar-resizer"
+                style={{ flexBasis: props.gutterWidth }}
+                onMouseDown={startResizing}
+              />
+            )}
           </div>
           <div className="app-frame" />
         </>
@@ -98,7 +105,13 @@ const Sidebar: FC<Props> = (props: Props) => {
               return e.preventDefault();
             }}
           >
-            {props.draggable && <div className="app-sidebar-resizer" onMouseDown={startResizing} />}
+            {props.draggable && (
+              <div
+                className="app-sidebar-resizer"
+                style={{ flexBasis: props.gutterWidth }}
+                onMouseDown={startResizing}
+              />
+            )}
             <div className="app-sidebar-content">{props.children ? props.children : <></>}</div>
           </div>
         </>
@@ -112,7 +125,8 @@ Sidebar.defaultProps = {
   width: 200,
   minWidth: 150,
   maxWidth: 300,
-  draggable: false
+  draggable: false,
+  gutterWidth: 6
 };
 
 export default Sidebar;
