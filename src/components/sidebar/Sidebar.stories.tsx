@@ -1,6 +1,7 @@
-import React from 'react';
-import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
+import { Meta } from '@storybook/react/types-6-0';
+import React from 'react';
+
 import Sidebar from './Sidebar';
 import { Position, GutterStyles } from './Sidebar.enums';
 
@@ -22,8 +23,7 @@ const Template: Story = () => {
       gutterWidth={10}
       gutterStyle={GutterStyles.dotted}
       gutterColor="pink"
-      gutterHeight={70}
-    ></Sidebar>
+      gutterHeight={70}></Sidebar>
   );
 };
 

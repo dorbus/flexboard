@@ -58,7 +58,7 @@ const Sidebar: FC<Props> = (props: Props) => {
           if (right) setSidebarWidth(right.getBoundingClientRect().right - mouseMoveEvent.clientX);
         }
     },
-    [isResizing]
+    [isResizing, props.direction]
   );
 
   // AddEventListeners as soon as the component mounts
@@ -77,6 +77,7 @@ const Sidebar: FC<Props> = (props: Props) => {
       {props.direction === Position.left && (
         <>
           <div
+            role="presentation"
             ref={sidebarRef}
             className="app-sidebar"
             style={{
@@ -87,33 +88,31 @@ const Sidebar: FC<Props> = (props: Props) => {
             }}
             onMouseDown={(e) => {
               return e.preventDefault();
-            }}
-          >
+            }}>
             <div className="app-sidebar-content">{props.children ? props.children : <></>}</div>
             {props.draggable && props.gutterStyle === GutterStyles.dotted && (
               <div
                 className="app-sidebar-resizer"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                style={{ flexBasis: props.gutterWidth }}
-              >
+                style={{ flexBasis: props.gutterWidth }}>
                 <div
+                  role="presentation"
                   onMouseDown={startResizing}
                   className="gutter"
                   style={{
                     width: isHovering ? props.gutterWidth : '',
                     height: isHovering ? props.gutterHeight : '',
                     backgroundColor: isHovering ? props.gutterColor : ''
-                  }}
-                ></div>
+                  }}></div>
               </div>
             )}
             {props.draggable && props.gutterStyle === GutterStyles.line && (
               <div
+                role="presentation"
                 className="app-sidebar-resizer"
                 style={{ flexBasis: props.gutterWidth }}
-                onMouseDown={startResizing}
-              ></div>
+                onMouseDown={startResizing}></div>
             )}
           </div>
           <div className="app-frame" />
@@ -123,6 +122,7 @@ const Sidebar: FC<Props> = (props: Props) => {
         <>
           <div className="app-frame" />
           <div
+            role="presentation"
             ref={sidebarRef}
             className="app-sidebar"
             style={{
@@ -133,32 +133,30 @@ const Sidebar: FC<Props> = (props: Props) => {
             }}
             onMouseDown={(e) => {
               return e.preventDefault();
-            }}
-          >
+            }}>
             {props.draggable && props.gutterStyle === GutterStyles.dotted && (
               <div
                 className="app-sidebar-resizer"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                style={{ flexBasis: props.gutterWidth }}
-              >
+                style={{ flexBasis: props.gutterWidth }}>
                 <div
+                  role="presentation"
                   onMouseDown={startResizing}
                   style={{
                     width: isHovering ? props.gutterWidth : '',
                     height: isHovering ? props.gutterHeight : '',
                     backgroundColor: isHovering ? props.gutterColor : ''
                   }}
-                  className="gutter"
-                ></div>
+                  className="gutter"></div>
               </div>
             )}
             {props.draggable && props.gutterStyle === GutterStyles.line && (
               <div
+                role="presentation"
                 className="app-sidebar-resizer"
                 style={{ flexBasis: props.gutterWidth }}
-                onMouseDown={startResizing}
-              ></div>
+                onMouseDown={startResizing}></div>
             )}
             <div className="app-sidebar-content">{props.children ? props.children : <></>}</div>
           </div>
