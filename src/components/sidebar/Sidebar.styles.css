@@ -36,6 +36,9 @@
   justify-self: flex-end;
   cursor: col-resize;
   resize: horizontal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .app-sidebar .app-sidebar-resizer:hover {

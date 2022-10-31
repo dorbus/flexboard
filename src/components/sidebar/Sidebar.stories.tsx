@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import Sidebar from './Sidebar';
-import { Position } from './Sidebar.enums';
+import { Position, GutterStyles } from './Sidebar.enums';
 
 export default {
   title: 'Components/Sidebar',
@@ -13,13 +13,16 @@ export default {
 const Template: Story = () => {
   return (
     <Sidebar
-      sidebarStyle={{ backgroundColor: 'aqua' }}
+      sidebarStyle={{ backgroundColor: 'black' }}
       direction={Position.left}
-      width={100}
+      width={400}
       draggable={true}
-      minWidth={50}
-      maxWidth={200}
-      gutterWidth={5}
+      minWidth={200}
+      maxWidth={600}
+      gutterWidth={10}
+      gutterStyle={GutterStyles.dotted}
+      gutterColor="pink"
+      gutterHeight={70}
     ></Sidebar>
   );
 };

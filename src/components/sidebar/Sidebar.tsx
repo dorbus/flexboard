@@ -3,7 +3,7 @@ import React, { FC, ReactElement, useState, useEffect, useRef, useCallback } fro
 // Importing sidebar styles
 import './Sidebar.styles.css';
 // Importing Sidebar enums
-import { Position } from './Sidebar.enums';
+import { Position, GutterStyles } from './Sidebar.enums';
 
 interface Props {
   direction?: Position;
@@ -14,6 +14,9 @@ interface Props {
   draggable?: boolean;
   sidebarStyle?: React.CSSProperties;
   gutterWidth?: number;
+  gutterStyle?: GutterStyles;
+  gutterColor?: string;
+  gutterHeight?: number;
 }
 
 const Sidebar: FC<Props> = (props: Props) => {
@@ -21,6 +24,7 @@ const Sidebar: FC<Props> = (props: Props) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const [isResizing, setIsResizing] = useState<boolean>(false);
   const [sidebarWidth, setSidebarWidth] = useState<number>(props.width ? props.width : 0);
+  const [isHovering, setIsHovering] = useState(false);
 
   // Sets isResizing to true
   const startResizing = useCallback(() => {
@@ -31,6 +35,14 @@ const Sidebar: FC<Props> = (props: Props) => {
   const stopResizing = useCallback(() => {
     setIsResizing(false);
   }, []);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
 
   // Changes the sidebar width while isResizing is true
   const resize = useCallback(
@@ -78,12 +90,30 @@ const Sidebar: FC<Props> = (props: Props) => {
             }}
           >
             <div className="app-sidebar-content">{props.children ? props.children : <></>}</div>
-            {props.draggable && (
+            {props.draggable && props.gutterStyle === GutterStyles.dotted && (
+              <div
+                className="app-sidebar-resizer"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                style={{ flexBasis: props.gutterWidth }}
+              >
+                <div
+                  onMouseDown={startResizing}
+                  className="gutter"
+                  style={{
+                    width: isHovering ? props.gutterWidth : '',
+                    height: isHovering ? props.gutterHeight : '',
+                    backgroundColor: isHovering ? props.gutterColor : ''
+                  }}
+                ></div>
+              </div>
+            )}
+            {props.draggable && props.gutterStyle === GutterStyles.line && (
               <div
                 className="app-sidebar-resizer"
                 style={{ flexBasis: props.gutterWidth }}
                 onMouseDown={startResizing}
-              />
+              ></div>
             )}
           </div>
           <div className="app-frame" />
@@ -105,12 +135,30 @@ const Sidebar: FC<Props> = (props: Props) => {
               return e.preventDefault();
             }}
           >
-            {props.draggable && (
+            {props.draggable && props.gutterStyle === GutterStyles.dotted && (
+              <div
+                className="app-sidebar-resizer"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                style={{ flexBasis: props.gutterWidth }}
+              >
+                <div
+                  onMouseDown={startResizing}
+                  style={{
+                    width: isHovering ? props.gutterWidth : '',
+                    height: isHovering ? props.gutterHeight : '',
+                    backgroundColor: isHovering ? props.gutterColor : ''
+                  }}
+                  className="gutter"
+                ></div>
+              </div>
+            )}
+            {props.draggable && props.gutterStyle === GutterStyles.line && (
               <div
                 className="app-sidebar-resizer"
                 style={{ flexBasis: props.gutterWidth }}
                 onMouseDown={startResizing}
-              />
+              ></div>
             )}
             <div className="app-sidebar-content">{props.children ? props.children : <></>}</div>
           </div>
@@ -126,7 +174,10 @@ Sidebar.defaultProps = {
   minWidth: 150,
   maxWidth: 300,
   draggable: false,
-  gutterWidth: 6
+  gutterWidth: 6,
+  gutterStyle: GutterStyles.line,
+  gutterColor: 'white',
+  gutterHeight: 20
 };
 
 export default Sidebar;
