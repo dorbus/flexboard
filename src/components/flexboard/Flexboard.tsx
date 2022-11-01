@@ -1,9 +1,9 @@
 import React, { FC, ReactElement, useState, useEffect, useRef, useCallback } from 'react';
 
 // Importing sidebar styles
-import './Sidebar.styles.css';
+import './Flexboard.styles.css';
 // Importing Sidebar enums
-import { Position, GutterStyles } from './Sidebar.enums';
+import { Position, GutterStyles } from './Flexboard.enums';
 
 interface Props {
   direction?: Position;
@@ -19,11 +19,11 @@ interface Props {
   gutterHeight?: number;
 }
 
-const Sidebar: FC<Props> = (props: Props) => {
+const Flexboard: FC<Props> = (props: Props) => {
   // States
-  const sidebarRef = useRef<HTMLDivElement>(null);
+  const flexboardRef = useRef<HTMLDivElement>(null);
   const [isResizing, setIsResizing] = useState<boolean>(false);
-  const [sidebarWidth, setSidebarWidth] = useState<number>(props.width ? props.width : 0);
+  const [flexboardWidth, setFlexboardWidth] = useState<number>(props.width ? props.width : 0);
   const [isHovering, setIsHovering] = useState(false);
 
   // Sets isResizing to true
@@ -50,12 +50,13 @@ const Sidebar: FC<Props> = (props: Props) => {
       if (isResizing)
         if (props.direction === Position.left) {
           // Set the new sidebar width to = current X coordinate of mouse (X) - left X coordinate of sidebar
-          const left = sidebarRef.current;
-          if (left) setSidebarWidth(mouseMoveEvent.clientX - left.getBoundingClientRect().left);
+          const left = flexboardRef.current;
+          if (left) setFlexboardWidth(mouseMoveEvent.clientX - left.getBoundingClientRect().left);
         } else if (props.direction === Position.right) {
           // Set the new sidebar width to = Right X coordinate of sidebar - current X coordinate of mouse (X)
-          const right = sidebarRef.current;
-          if (right) setSidebarWidth(right.getBoundingClientRect().right - mouseMoveEvent.clientX);
+          const right = flexboardRef.current;
+          if (right)
+            setFlexboardWidth(right.getBoundingClientRect().right - mouseMoveEvent.clientX);
         }
     },
     [isResizing, props.direction]
@@ -78,24 +79,26 @@ const Sidebar: FC<Props> = (props: Props) => {
         <>
           <div
             role="presentation"
-            ref={sidebarRef}
-            className="app-sidebar"
+            ref={flexboardRef}
+            className="app-flexboard"
             style={{
-              width: sidebarWidth,
+              width: flexboardWidth,
               minWidth: props.minWidth,
               maxWidth: props.maxWidth,
               ...props.sidebarStyle
             }}
             onMouseDown={(e) => {
               return e.preventDefault();
-            }}>
-            <div className="app-sidebar-content">{props.children ? props.children : <></>}</div>
+            }}
+          >
+            <div className="app-flexboard-content">{props.children ? props.children : <></>}</div>
             {props.draggable && props.gutterStyle === GutterStyles.dotted && (
               <div
-                className="app-sidebar-resizer"
+                className="app-flexboard-resizer"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                style={{ flexBasis: props.gutterWidth }}>
+                style={{ flexBasis: props.gutterWidth }}
+              >
                 <div
                   role="presentation"
                   onMouseDown={startResizing}
@@ -104,15 +107,17 @@ const Sidebar: FC<Props> = (props: Props) => {
                     width: isHovering ? props.gutterWidth : '',
                     height: isHovering ? props.gutterHeight : '',
                     backgroundColor: isHovering ? props.gutterColor : ''
-                  }}></div>
+                  }}
+                ></div>
               </div>
             )}
             {props.draggable && props.gutterStyle === GutterStyles.line && (
               <div
                 role="presentation"
-                className="app-sidebar-resizer"
+                className="app-flexboard-resizer"
                 style={{ flexBasis: props.gutterWidth }}
-                onMouseDown={startResizing}></div>
+                onMouseDown={startResizing}
+              ></div>
             )}
           </div>
           <div className="app-frame" />
@@ -123,23 +128,25 @@ const Sidebar: FC<Props> = (props: Props) => {
           <div className="app-frame" />
           <div
             role="presentation"
-            ref={sidebarRef}
-            className="app-sidebar"
+            ref={flexboardRef}
+            className="app-flexboard"
             style={{
-              width: sidebarWidth,
+              width: flexboardWidth,
               minWidth: props.minWidth,
               maxWidth: props.maxWidth,
               ...props.sidebarStyle
             }}
             onMouseDown={(e) => {
               return e.preventDefault();
-            }}>
+            }}
+          >
             {props.draggable && props.gutterStyle === GutterStyles.dotted && (
               <div
-                className="app-sidebar-resizer"
+                className="app-flexboard-resizer"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                style={{ flexBasis: props.gutterWidth }}>
+                style={{ flexBasis: props.gutterWidth }}
+              >
                 <div
                   role="presentation"
                   onMouseDown={startResizing}
@@ -148,17 +155,19 @@ const Sidebar: FC<Props> = (props: Props) => {
                     height: isHovering ? props.gutterHeight : '',
                     backgroundColor: isHovering ? props.gutterColor : ''
                   }}
-                  className="gutter"></div>
+                  className="gutter"
+                ></div>
               </div>
             )}
             {props.draggable && props.gutterStyle === GutterStyles.line && (
               <div
                 role="presentation"
-                className="app-sidebar-resizer"
+                className="app-flexboard-resizer"
                 style={{ flexBasis: props.gutterWidth }}
-                onMouseDown={startResizing}></div>
+                onMouseDown={startResizing}
+              ></div>
             )}
-            <div className="app-sidebar-content">{props.children ? props.children : <></>}</div>
+            <div className="app-flexboard-content">{props.children ? props.children : <></>}</div>
           </div>
         </>
       )}
@@ -166,7 +175,7 @@ const Sidebar: FC<Props> = (props: Props) => {
   );
 };
 
-Sidebar.defaultProps = {
+Flexboard.defaultProps = {
   direction: Position.left,
   width: 200,
   minWidth: 150,
@@ -178,4 +187,4 @@ Sidebar.defaultProps = {
   gutterHeight: 20
 };
 
-export default Sidebar;
+export default Flexboard;

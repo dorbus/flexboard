@@ -3,7 +3,7 @@
   flex-direction: row;
 }
 
-.app-sidebar {
+.app-flexboard {
   flex-grow: 0;
   flex-shrink: 0;
   display: flex;
@@ -26,11 +26,11 @@
   z-index: 1;
 }
 
-.app-sidebar .app-sidebar-content {
+.app-flexboard .app-flexboard-content {
   flex: 1;
 }
 
-.app-sidebar .app-sidebar-resizer {
+.app-flexboard .app-flexboard-resizer {
   flex-grow: 0;
   flex-shrink: 0;
   justify-self: flex-end;
@@ -41,6 +41,6 @@
   align-items: center;
 }
 
-.app-sidebar .app-sidebar-resizer:hover {
+.app-flexboard .app-flexboard-resizer:hover {
   background: #c1c3c5b4;
 }
