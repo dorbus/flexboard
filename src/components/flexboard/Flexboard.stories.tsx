@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 import { Meta } from '@storybook/react/types-6-0';
 import React from 'react';
+
 import Flexboard from './Flexboard';
 import { Position, GutterStyles } from './Flexboard.enums';
 
@@ -22,8 +23,7 @@ const Template: Story = () => {
       gutterWidth={10}
       gutterStyle={GutterStyles.dotted}
       gutterColor="pink"
-      gutterHeight={70}
-    ></Flexboard>
+      gutterHeight={70}></Flexboard>
   );
 };
 
