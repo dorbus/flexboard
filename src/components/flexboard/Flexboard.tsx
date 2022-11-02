@@ -74,7 +74,7 @@ const Flexboard: FC<Props> = (props: Props) => {
 
   // Conditional rendering based on whether position is left or right
   return (
-    <div className="app-container">
+    <>
       {props.direction === Position.left && (
         <>
           <div
@@ -116,12 +116,10 @@ const Flexboard: FC<Props> = (props: Props) => {
                 onMouseDown={startResizing}></div>
             )}
           </div>
-          <div className="app-frame" />
         </>
       )}
       {props.direction === Position.right && (
         <>
-          <div className="app-frame" />
           <div
             role="presentation"
             ref={flexboardRef}
@@ -163,7 +161,7 @@ const Flexboard: FC<Props> = (props: Props) => {
           </div>
         </>
       )}
-    </div>
+    </>
   );
 };
 
