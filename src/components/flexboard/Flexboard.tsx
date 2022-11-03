@@ -1,29 +1,26 @@
-import React, { FC, ReactElement, useState, useEffect, useRef, useCallback } from 'react';
+import React, { FC, useState, useEffect, useRef, useCallback, ReactNode } from 'react';
 
 // Importing sidebar styles
 import './Flexboard.styles.css';
 // Importing Sidebar enums
-import { Position, GutterStyles } from './Flexboard.enums';
+import { Position, ResizerStyles } from './Flexboard.enums';
 
 interface Props {
   direction?: Position;
-  children?: ReactElement;
+  children?: ReactNode | ReactNode[];
   width?: number;
   minWidth?: number;
   maxWidth?: number;
   draggable?: boolean;
   sidebarStyle?: React.CSSProperties;
-  gutterWidth?: number;
-  gutterStyle?: GutterStyles;
-  gutterColor?: string;
-  gutterHeight?: number;
+  resizerStyle?: ResizerStyles;
 }
 
 const Flexboard: FC<Props> = (props: Props) => {
   // States
   const flexboardRef = useRef<HTMLDivElement>(null);
   const [isResizing, setIsResizing] = useState<boolean>(false);
-  const [flexboardWidth, setFlexboardWidth] = useState<number>(props.width ? props.width : 0);
+  const [flexboardWidth, setFlexboardWidth] = useState<number>(props.width ?? 0);
   const [isHovering, setIsHovering] = useState(false);
 
   // Sets isResizing to true
@@ -91,29 +88,47 @@ const Flexboard: FC<Props> = (props: Props) => {
               return e.preventDefault();
             }}>
             <div className="app-flexboard-content">{props.children ? props.children : <></>}</div>
-            {props.draggable && props.gutterStyle === GutterStyles.dotted && (
+            {props.draggable && props.resizerStyle === ResizerStyles.line && (
               <div
                 className="app-flexboard-resizer"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                style={{ flexBasis: props.gutterWidth }}>
-                <div
-                  role="presentation"
-                  onMouseDown={startResizing}
-                  className="gutter"
-                  style={{
-                    width: isHovering ? props.gutterWidth : '',
-                    height: isHovering ? props.gutterHeight : '',
-                    backgroundColor: isHovering ? props.gutterColor : ''
-                  }}></div>
-              </div>
+                onMouseDown={startResizing}
+                style={{
+                  width: isHovering ? '5px' : '',
+                  background: 'none'
+                }}
+              />
             )}
-            {props.draggable && props.gutterStyle === GutterStyles.line && (
+            {props.draggable && props.resizerStyle === ResizerStyles.shadowline && (
               <div
-                role="presentation"
                 className="app-flexboard-resizer"
-                style={{ flexBasis: props.gutterWidth }}
-                onMouseDown={startResizing}></div>
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onMouseDown={startResizing}
+                style={{
+                  width: isHovering ? '5px' : '',
+                  boxShadow: isHovering ? '2px 2px 2px 1px rgba(0, 0, 0, 0.2)' : '',
+                  background: isHovering ? 'none' : ''
+                }}
+              />
+            )}
+            {props.draggable && props.resizerStyle === ResizerStyles.lane && (
+              <div
+                className="app-flexboard-resizer"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onMouseDown={startResizing}
+              />
+            )}
+            {props.draggable && props.resizerStyle === ResizerStyles.gutterlane && (
+              <div
+                className="app-flexboard-resizer"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onMouseDown={startResizing}>
+                <div className="gutter"></div>
+              </div>
             )}
           </div>
         </>
@@ -133,29 +148,55 @@ const Flexboard: FC<Props> = (props: Props) => {
             onMouseDown={(e) => {
               return e.preventDefault();
             }}>
-            {props.draggable && props.gutterStyle === GutterStyles.dotted && (
+            {props.draggable && props.resizerStyle === ResizerStyles.line && (
               <div
                 className="app-flexboard-resizer"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                style={{ flexBasis: props.gutterWidth }}>
-                <div
-                  role="presentation"
-                  onMouseDown={startResizing}
-                  style={{
-                    width: isHovering ? props.gutterWidth : '',
-                    height: isHovering ? props.gutterHeight : '',
-                    backgroundColor: isHovering ? props.gutterColor : ''
-                  }}
-                  className="gutter"></div>
-              </div>
+                onMouseDown={startResizing}
+                style={{
+                  width: isHovering ? '5px' : '',
+                  background: 'none'
+                }}
+              />
             )}
-            {props.draggable && props.gutterStyle === GutterStyles.line && (
+            {props.draggable && props.resizerStyle === ResizerStyles.shadowline && (
               <div
-                role="presentation"
                 className="app-flexboard-resizer"
-                style={{ flexBasis: props.gutterWidth }}
-                onMouseDown={startResizing}></div>
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onMouseDown={startResizing}
+                style={{
+                  width: isHovering ? '5px' : '',
+                  boxShadow: isHovering ? '2px 2px 2px 1px rgba(0, 0, 0, 0.2)' : '',
+                  background: isHovering ? 'none' : ''
+                }}
+              />
+            )}
+            {props.draggable && props.resizerStyle === ResizerStyles.lane && (
+              <div
+                className="app-flexboard-resizer"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onMouseDown={startResizing}
+              />
+            )}
+            {props.draggable && props.resizerStyle === ResizerStyles.gutterlane && (
+              <div
+                className="app-flexboard-resizer"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onMouseDown={startResizing}>
+                <div
+                  className="gutter"
+                  style={{
+                    height: isHovering ? '25px' : '',
+                    width: isHovering ? '100%' : '',
+                    backgroundColor: isHovering ? 'grey' : '',
+                    borderLeft: isHovering ? 'dashed black' : '',
+                    borderRight: isHovering ? 'dashed black' : ''
+                  }}></div>
+              </div>
             )}
             <div className="app-flexboard-content">{props.children ? props.children : <></>}</div>
           </div>
@@ -171,10 +212,7 @@ Flexboard.defaultProps = {
   minWidth: 150,
   maxWidth: 300,
   draggable: false,
-  gutterWidth: 6,
-  gutterStyle: GutterStyles.line,
-  gutterColor: 'white',
-  gutterHeight: 20
+  resizerStyle: ResizerStyles.line
 };
 
 export default Flexboard;

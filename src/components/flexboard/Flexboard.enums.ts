@@ -4,7 +4,9 @@ export enum Position {
   right = 'right'
 }
 
-export enum GutterStyles {
+export enum ResizerStyles {
   line = 'line',
-  dotted = 'dotted'
+  shadowline = 'shadowline',
+  lane = 'lane',
+  gutterlane = 'gutterlan'
 }

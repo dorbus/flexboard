@@ -1,7 +1,7 @@
 .app-container {
   display: flex;
   flex-direction: row;
-  /* max-width: 100vw; */
+  box-shadow: -8px 2px 22px -7px rgba(0, 0, 0, 0.25);
 }
 
 .app-flexboard {
@@ -11,7 +11,6 @@
   border-right: #e9e9e9 1px solid;
   flex-direction: row;
   background: #ffffff;
-  box-shadow: -8px 2px 22px -7px rgba(0, 0, 0, 0.25);
   z-index: 2;
 }
 
@@ -23,7 +22,6 @@
   height: 100vh;
   max-height: 100%;
   background: #ffffff;
-  box-shadow: 8px 2px 32px -2px rgba(0, 0, 0, 0.25);
   z-index: 1;
 }
 
@@ -40,6 +38,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 7px;
 }
 
 .app-flexboard .app-flexboard-resizer:hover {
