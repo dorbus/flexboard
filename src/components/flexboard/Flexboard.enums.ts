@@ -4,7 +4,7 @@ export enum Position {
   right = 'right'
 }
 
-export enum ResizerStyles {
+export enum ResizerTypes {
   line = 'line',
   shadowline = 'shadowline',
   lane = 'lane',

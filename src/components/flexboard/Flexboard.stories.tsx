@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react/types-6-0';
 import React from 'react';
 
 import Flexboard from './Flexboard';
-import { Position, ResizerStyles } from './Flexboard.enums';
+import { Position, ResizerTypes } from './Flexboard.enums';
 import FlexboardFrame from './FlexboardFrame';
 import FlexboardProvider from './FlexboardProvider';
 
@@ -23,7 +23,7 @@ const Template: Story = () => {
         draggable={true}
         minWidth={200}
         maxWidth={600}
-        resizerStyle={ResizerStyles.line}>
+        resizerType={ResizerTypes.line}>
         <ul>
           <li>
             <h2>Hey</h2>
@@ -49,7 +49,8 @@ const Template: Story = () => {
         draggable={true}
         minWidth={200}
         maxWidth={600}
-        resizerStyle={ResizerStyles.gutterlane}></Flexboard>
+        resizerType={ResizerTypes.gutterlane}
+        resizerStyle={{ backgroundColor: 'pink' }}></Flexboard>
     </FlexboardProvider>
   );
 };
