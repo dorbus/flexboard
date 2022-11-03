@@ -4,6 +4,9 @@ import React from 'react';
 
 import Flexboard from './Flexboard';
 
-test('Should render Flexboard', () => {
-  render(<Flexboard />);
+describe('Flexboard', () => {
+  it('should render', () => {
+    const { container } = render(<Flexboard />);
+    expect(container).toBeInTheDocument();
+  });
 });
