@@ -6,7 +6,6 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-
     // Added
     "jsx": "react",
     "module": "ESNext",
@@ -18,6 +17,12 @@
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "src",
+    "./jest.setup.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
