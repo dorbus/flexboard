@@ -1,9 +1,14 @@
 {
   "author": "Divyanshu Shekhar",
-  "name": "flexboard",
+  "name": "@DevsOnReact/flexboard",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/DevsOnReact"
+  },
+  "private": false,
   "description": "React component library for re-sizable sidebars",
   "version": "1.0.0",
   "license": "ISC",
+  "keywords": ["react", "components", "sidebar"],
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
