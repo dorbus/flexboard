@@ -12,7 +12,7 @@ interface Props {
   minWidth?: number;
   maxWidth?: number;
   draggable?: boolean;
-  sidebarStyle?: React.CSSProperties;
+  flexboardStyle?: React.CSSProperties;
   resizerType?: ResizerTypes;
   resizerStyle?: React.CSSProperties;
 }
@@ -83,7 +83,7 @@ const Flexboard: FC<Props> = (props: Props) => {
               width: flexboardWidth,
               minWidth: props.minWidth,
               maxWidth: props.maxWidth,
-              ...props.sidebarStyle
+              ...props.flexboardStyle
             }}
             onMouseDown={(e) => {
               return e.preventDefault();
@@ -148,7 +148,7 @@ const Flexboard: FC<Props> = (props: Props) => {
               width: flexboardWidth,
               minWidth: props.minWidth,
               maxWidth: props.maxWidth,
-              ...props.sidebarStyle
+              ...props.flexboardStyle
             }}
             onMouseDown={(e) => {
               return e.preventDefault();

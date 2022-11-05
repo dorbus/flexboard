@@ -22,7 +22,7 @@ const Template: Story = () => {
         width={400}
         minWidth={200}
         maxWidth={600}
-        sidebarStyle={{ backgroundColor: '#f2f3f4' }}
+        flexboardStyle={{ backgroundColor: '#f2f3f4' }}
         resizerStyle={{ backgroundColor: 'pink' }}
         resizerType={ResizerTypes.line}>
         <center>

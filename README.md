@@ -1,7 +1,6 @@
 <div align="center">
 <img src="./img/Flexboard_icon.png" height=300 width=300 alt="Flexboard Logo">
 <h1>Flexboard</h1>
-<hr>
 </div>
 
 <!-- Repository stats -->
@@ -69,7 +68,7 @@ import { FlexboardProvider, Flexboard, FlexboardFrame } from 'flexboard';
         width={400}
         minWidth={200}
         maxWidth={600}
-        sidebarStyle={{ backgroundColor: '#f2f3f4' }}
+        flexboardStyle={{ backgroundColor: '#f2f3f4' }}
         resizerStyle={{ backgroundColor: 'pink'}}
         resizerType={ResizerTypes.line}>
     <div>Flexboard Content</div>
@@ -127,7 +126,7 @@ import { FlexboardProvider, Flexboard, FlexboardFrame } from 'flexboard';
             <td><code>300</code></td>
         </tr>
         <tr>
-            <td>sidebarStyle</td>
+            <td>flexboardStyle</td>
             <td><code>CSS</code></td>
             <td>Pass custom sidebar styles</td>
             <td>-</td>
