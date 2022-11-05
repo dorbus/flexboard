@@ -6,7 +6,7 @@
   },
   "private": false,
   "description": "React component library for re-sizable sidebars",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "ISC",
   "keywords": ["react", "components", "sidebar"],
   "type": "module",
