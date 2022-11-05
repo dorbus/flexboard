@@ -1,0 +1,62 @@
+name: Publish to GitHub Packages 📦
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm test
+
+      - name: Build 🔧
+        run: npm run build
+
+  package:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js 18.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: package
+          path: '*.tgz'
+
+  publish:
+    name: 'Publish to GitHub Packages'
+    needs: [package]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload
+        uses: actions/download-artifact@v2
+        with:
+          name: package
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          registry-url: https://npm.pkg.github.com/
+          scope: '@DevsOnReact'
+      - run: echo "registry=https://npm.pkg.github.com/@DevsOnReact" >> .npmrc
+      - run: npm publish $(ls *.tgz)
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GH_PACKAGE_TOKEN}}
