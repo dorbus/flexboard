@@ -1,4 +1,4 @@
-name: Publish to GitHub Packages 📦
+name: Publish Packages 📦
 
 on:
   release:
@@ -41,7 +41,7 @@ jobs:
           name: package
           path: '*.tgz'
 
-  publish:
+  publish-to-github-packages:
     name: 'Publish to GitHub Packages'
     needs: [package]
     runs-on: ubuntu-latest
@@ -63,3 +63,18 @@ jobs:
       - run: npm publish $(ls *.tgz) --access public
           env:
             NODE_AUTH_TOKEN: ${{secrets.GH_PACKAGE_TOKEN}}
+  
+  publish-to-npm:
+    name: 'Publish to NPM'
+    needs: [package]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org
+
+      - name: Publish to NPM 📦
+      - run: npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{secrets.NPM_GITHUB_ACTION_TOKEN}}
