@@ -23,12 +23,13 @@ jobs:
       - name: Install Dependencies
         run: npm install --force
 
-      - run: npm test
+      - name: Test
+        run: npm test
 
       - name: Build 🔧
         run: npm run build
 
-      - run: npm publish
-        working-directory: ./dist
+      - name: Publish to GitHub Packages
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGE_TOKEN }}
