@@ -60,6 +60,6 @@ jobs:
       - run: echo "registry=https://npm.pkg.github.com/@DevsOnReact" >> .npmrc
 
       - name: Publish to GitHub Packages 📦
-        run: npm publish $(ls *.tgz) --access public
+      - run: npm publish $(ls *.tgz) --access public
           env:
             NODE_AUTH_TOKEN: ${{secrets.GH_PACKAGE_TOKEN}}
