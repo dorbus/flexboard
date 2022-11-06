@@ -2,19 +2,19 @@ name: Publish to GitHub Packages 📦
 
 on:
   release:
-    types: [created]
+    types:
+      - published
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: 16
 
       - name: Install Dependencies
         run: npm install --force
@@ -29,11 +29,11 @@ jobs:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js 16.x
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - name: Setup Node js
+        uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 16
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
@@ -51,7 +51,7 @@ jobs:
         with:
           name: package
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: 16.x
           registry-url: https://npm.pkg.github.com/
