@@ -30,12 +30,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node.js 18.x
+      - name: Setup Node.js 16.x
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
 
-      - name: Upload
+      - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: package
@@ -46,17 +46,20 @@ jobs:
     needs: [package]
     runs-on: ubuntu-latest
     steps:
-      - name: Upload
+      - name: Download Artifact
         uses: actions/download-artifact@v2
         with:
           name: package
 
       - uses: actions/setup-node@v1
         with:
-          node-version: 18.x
+          node-version: 16.x
           registry-url: https://npm.pkg.github.com/
           scope: '@DevsOnReact'
+
       - run: echo "registry=https://npm.pkg.github.com/@DevsOnReact" >> .npmrc
-      - run: npm publish $(ls *.tgz)
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GH_PACKAGE_TOKEN}}
+
+      - name: Publish to GitHub Packages 📦
+        run: npm publish $(ls *.tgz) --access public
+          env:
+            NODE_AUTH_TOKEN: ${{secrets.GH_PACKAGE_TOKEN}}
