@@ -42,7 +42,7 @@ jobs:
           path: '*.tgz'
 
   publish-to-github-packages:
-    name: 'Publish to GitHub Packages'
+    name: 'Publish to GitHub Packages 📦'
     needs: [package]
     runs-on: ubuntu-latest
     steps:
@@ -61,12 +61,12 @@ jobs:
 
       - name: Publish to GitHub Packages 📦
       - run: npm publish $(ls *.tgz) --access public
-          env:
-            NODE_AUTH_TOKEN: ${{secrets.GH_PACKAGE_TOKEN}}
-  
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GH_PACKAGE_TOKEN}}
+
   publish-to-npm:
-    name: 'Publish to NPM'
-    needs: [package]
+    name: 'Publish to NPM 📦'
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
@@ -76,5 +76,6 @@ jobs:
 
       - name: Publish to NPM 📦
       - run: npm publish
-          env:
-            NODE_AUTH_TOKEN: ${{secrets.NPM_GITHUB_ACTION_TOKEN}}
+        working-directory: ./dist
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_GITHUB_ACTION_TOKEN}}
