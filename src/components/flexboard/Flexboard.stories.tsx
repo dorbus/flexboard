@@ -19,8 +19,13 @@ export default {
 const Template: Story = () => {
   return (
     <FlexboardProvider>
+      <FlexboardFrame>
+        <center>
+          <h2>Frame Content</h2>
+        </center>
+      </FlexboardFrame>
       <Flexboard
-        direction={Position.left}
+        direction={Position.right}
         draggable={true}
         width={400}
         minWidth={200}
@@ -32,11 +37,6 @@ const Template: Story = () => {
           <h2>Flexboard Content</h2>
         </center>
       </Flexboard>
-      <FlexboardFrame>
-        <center>
-          <h2>Frame Content</h2>
-        </center>
-      </FlexboardFrame>
     </FlexboardProvider>
   );
 };
