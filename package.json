@@ -1,5 +1,5 @@
 {
-  "name": "flexboard",
+  "name": "@devsonreact/flexboard",
   "description": "React component library for re-sizable sidebars",
   "version": "1.0.0",
   "author": "Divyanshu Shekhar <imdshekhar@gmail.com>",
