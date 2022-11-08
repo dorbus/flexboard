@@ -11,8 +11,6 @@
 
 <img alt="GitHub release (latest by date including pre-releases" src="https://img.shields.io/github/v/release/dorbus/flexboard?include_prereleases">
 
-<br>
-
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/dorbus/flexboard?style=plastic">
 
 <img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/dorbus/flexboard?style=plastic">
@@ -20,8 +18,6 @@
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/dorbus/flexboard?style=plastic">
 
 <img alt="GitHub package.json dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/dorbus/flexboard/react?style=plastic">
-
-<br>
 
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/contributors-anon/dorbus/flexboard">
 
@@ -35,7 +31,7 @@
 
 ## Demo
 
-![react-pro-sidebar](./img/Flexboard_demo.gif)
+![react-pro-sidebar](./img/flexboard-demo.gif)
 
 <!-- Installation -->
 
@@ -60,23 +56,24 @@ npm install @dorbus/flexboard
 Import `FlexboardProvider`, `FlexboardFrame` and `Flexboard` and wrap `Flexboard` and `FlexboardFrame` inside `FlexboardProvider` as shown below:
 
 ```tsx
-import { FlexboardProvider, Flexboard, FlexboardFrame } from 'flexboard';
+import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position } from '@dorbus/flexboard';
 <FlexboardProvider>
-  <Flexboard
-    direction={Position.left}
-    draggable={true}
-    width={400}
-    minWidth={200}
-    maxWidth={600}
-    flexboardStyle={{ backgroundColor: '#f2f3f4' }}
-    resizerStyle={{ backgroundColor: 'pink' }}
-    resizerType={ResizerTypes.line}>
-    <div>Flexboard Content</div>
-  </Flexboard>
-  <FlexboardFrame>
-    <div>Frame Content</div>
-  </FlexboardFrame>
-</FlexboardProvider>;
+        <Flexboard
+          direction={Position.left}
+          draggable={true}
+          width={400}
+          minWidth={200}
+          maxWidth={600}
+          flexboardStyle={{ backgroundColor: "#f2f3f4" }}
+          resizerStyle={{ backgroundColor: "pink" }}
+          resizerType={ResizerType.gutterlane}
+        >
+          <div>Flexboard Content</div>
+        </Flexboard>
+        <FlexboardFrame>
+          <div>Frame Content</div>
+        </FlexboardFrame>
+      </FlexboardProvider>
 ```
 
 <!-- API -->
@@ -162,7 +159,7 @@ import { FlexboardProvider, Flexboard, FlexboardFrame } from 'flexboard';
 
 ## Stargazers
 
-[![Stargazers repo roster for @dorbus/felxboard](https://reporoster.com/stars/dark/dorbus/felxboard)](https://github.com/dorbus/felxboard/stargazers)
+[![Stargazers repo roster for @dorbus/flexboard](https://reporoster.com/stars/dorbus/flexboard)](https://github.com/dorbus/flexboard/stargazers)
 
 ## Forkers
 
