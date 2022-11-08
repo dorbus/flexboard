@@ -160,6 +160,14 @@ import { FlexboardProvider, Flexboard, FlexboardFrame } from 'flexboard';
 
 [![GitHub followers](https://img.shields.io/github/followers/aniketpathak028.svg?style=social&label=Follow)](https://github.com/aniketpathak028/)
 
+## Stargazers
+
+[![Stargazers repo roster for @dorbus/felxboard](https://reporoster.com/stars/dark/dorbus/felxboard)](https://github.com/dorbus/felxboard/stargazers)
+
+## Forkers
+
+[![Forkers repo roster for @dorbus/flexboard](https://reporoster.com/forks/dark/dorbus/flexboard)](https://github.com/dorbus/flexboard/network/members)
+
 <!-- License -->
 
 ## License
