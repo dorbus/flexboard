@@ -3,6 +3,10 @@
   "description": "React component library for re-sizable sidebars",
   "version": "1.0.0",
   "author": "Divyanshu Shekhar <imdshekhar@gmail.com>",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DevsOnReact/flexboard.git"

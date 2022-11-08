@@ -12,6 +12,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install Dependencies
         run: npm install --force
@@ -26,7 +27,7 @@ jobs:
         run: |
           npm config set scope devsonreact
           npm config set access public --global
-          npm config set //registry.npmjs.org/:_authToken ${NODE_AUTH_TOKEN}
+          npm config set //registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
           npm publish --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_GITHUB_ACTION_TOKEN}}
