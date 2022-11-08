@@ -1,0 +1,32 @@
+name: Publish to NPM 📦
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        run: npm install --force
+
+      - name: Test
+        run: npm test
+
+      - name: Build 🔧
+        run: npm run build
+
+      - name: Publish to NPM 📦
+        run: |
+          npm config set access public --global
+          npm config set //registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
+          npm publish --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_GITHUB_ACTION_TOKEN}}

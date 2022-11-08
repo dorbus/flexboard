@@ -7,25 +7,25 @@
 
 <div align="center">
 
-<img alt="GitHub" src="https://img.shields.io/github/license/DevsOnReact/flexboard?style=plastic">
+<img alt="GitHub" src="https://img.shields.io/github/license/dorbus/flexboard?style=plastic">
 
-<img alt="GitHub release (latest by date including pre-releases" src="https://img.shields.io/github/v/release/DevsOnReact/flexboard?include_prereleases">
-
-<br>
-
-<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/DevsOnReact/flexboard?style=plastic">
-
-<img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/DevsOnReact/flexboard?style=plastic">
-
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/DevsOnReact/flexboard?style=plastic">
-
-<img alt="GitHub package.json dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/DevsOnReact/flexboard/react?style=plastic">
+<img alt="GitHub release (latest by date including pre-releases" src="https://img.shields.io/github/v/release/dorbus/flexboard?include_prereleases">
 
 <br>
 
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/contributors-anon/DevsOnReact/flexboard">
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/dorbus/flexboard?style=plastic">
 
-<img alt="Github Repo Sponsors" src="https://img.shields.io/github/sponsors/DevsOnReact?style=plastic)">
+<img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/dorbus/flexboard?style=plastic">
+
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/dorbus/flexboard?style=plastic">
+
+<img alt="GitHub package.json dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/dorbus/flexboard/react?style=plastic">
+
+<br>
+
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/contributors-anon/dorbus/flexboard">
+
+<img alt="Github Repo Sponsors" src="https://img.shields.io/github/sponsors/dorbus?style=plastic)">
 
 <h4>React component library for re-sizable sidebars</h4>
 
@@ -44,13 +44,13 @@
 ### yarn
 
 ```bash
-yarn add @DevsOnReact/flexboard
+yarn add @dorbus/flexboard
 ```
 
 ### npm
 
 ```bash
-npm install @DevsOnReact/flexboard
+npm install @dorbus/flexboard
 ```
 
 <!-- Usage -->
@@ -164,4 +164,4 @@ import { FlexboardProvider, Flexboard, FlexboardFrame } from 'flexboard';
 
 ## License
 
-[ISC](LICENSE) © 2022 Divyanshu Shekhar.
+[ISC](LICENSE) © 2022 Dorbus.
