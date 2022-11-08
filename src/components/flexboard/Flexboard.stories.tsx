@@ -24,7 +24,7 @@ const Template: Story = () => {
         maxWidth={600}
         flexboardStyle={{ backgroundColor: '#f2f3f4' }}
         resizerStyle={{ backgroundColor: 'pink' }}
-        resizerType={ResizerTypes.line}>
+        resizerType={ResizerTypes.gutterlane}>
         <center>
           <h2>Flexboard Content</h2>
         </center>

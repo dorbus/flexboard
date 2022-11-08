@@ -63,16 +63,16 @@ Import `FlexboardProvider`, `FlexboardFrame` and `Flexboard` and wrap `Flexboard
 import { FlexboardProvider, Flexboard, FlexboardFrame } from 'flexboard';
 <FlexboardProvider>
   <Flexboard
-        direction={Position.left}
-        draggable={true}
-        width={400}
-        minWidth={200}
-        maxWidth={600}
-        flexboardStyle={{ backgroundColor: '#f2f3f4' }}
-        resizerStyle={{ backgroundColor: 'pink'}}
-        resizerType={ResizerTypes.line}>
+    direction={Position.left}
+    draggable={true}
+    width={400}
+    minWidth={200}
+    maxWidth={600}
+    flexboardStyle={{ backgroundColor: '#f2f3f4' }}
+    resizerStyle={{ backgroundColor: 'pink' }}
+    resizerType={ResizerTypes.line}>
     <div>Flexboard Content</div>
-   </Flexboard>
+  </Flexboard>
   <FlexboardFrame>
     <div>Frame Content</div>
   </FlexboardFrame>
@@ -145,6 +145,20 @@ import { FlexboardProvider, Flexboard, FlexboardFrame } from 'flexboard';
         </tr>
     </tbody>
 </table>
+
+## Project Created & Maintained By
+
+### Divyanshu Shekhar
+
+<a href="https://twitter.com/dshekhar17"><img src="https://github.com/aritraroy/social-icons/blob/master/twitter-icon.png?raw=true" width="60"></a> <a href="https://in.linkedin.com/in/divyanshu-shekhar-a8a04a162"><img src="https://github.com/aritraroy/social-icons/blob/master/linkedin-icon.png?raw=true" width="60"></a> <a href="https://instagram.com/dshekhar17"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
+
+[![GitHub followers](https://img.shields.io/github/followers/divshekhar.svg?style=social&label=Follow)](https://github.com/divshekhar/)
+
+### Aniket Pathak
+
+<a href="https://www.linkedin.com/in/aniket-pathak-8925311b5/"><img src="https://github.com/aritraroy/social-icons/blob/master/linkedin-icon.png?raw=true" width="60"></a> <a href="https://www.instagram.com/anik3t_pathak/"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
+
+[![GitHub followers](https://img.shields.io/github/followers/aniketpathak028.svg?style=social&label=Follow)](https://github.com/aniketpathak028/)
 
 <!-- License -->
 
