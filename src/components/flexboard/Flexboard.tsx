@@ -3,7 +3,7 @@ import React, { FC, useState, useEffect, useRef, useCallback, ReactNode } from '
 // Importing sidebar styles
 import './Flexboard.styles.css';
 // Importing Sidebar enums
-import { Position, ResizerTypes } from './Flexboard.enums';
+import { Position, ResizerType } from './Flexboard.enums';
 
 interface Props {
   direction?: Position;
@@ -13,7 +13,7 @@ interface Props {
   maxWidth?: number;
   draggable?: boolean;
   flexboardStyle?: React.CSSProperties;
-  resizerType?: ResizerTypes;
+  resizerType?: ResizerType;
   resizerStyle?: React.CSSProperties;
 }
 
@@ -89,7 +89,7 @@ const Flexboard: FC<Props> = (props: Props) => {
               return e.preventDefault();
             }}>
             <div className="app-flexboard-content">{props.children ? props.children : <></>}</div>
-            {props.draggable && props.resizerType === ResizerTypes.line && (
+            {props.draggable && props.resizerType === ResizerType.line && (
               <div
                 className="app-flexboard-resizer"
                 onMouseEnter={handleMouseEnter}
@@ -102,7 +102,7 @@ const Flexboard: FC<Props> = (props: Props) => {
                 }}
               />
             )}
-            {props.draggable && props.resizerType === ResizerTypes.shadowline && (
+            {props.draggable && props.resizerType === ResizerType.shadowline && (
               <div
                 className="app-flexboard-resizer"
                 onMouseEnter={handleMouseEnter}
@@ -116,7 +116,7 @@ const Flexboard: FC<Props> = (props: Props) => {
                 }}
               />
             )}
-            {props.draggable && props.resizerType === ResizerTypes.lane && (
+            {props.draggable && props.resizerType === ResizerType.lane && (
               <div
                 className="app-flexboard-resizer"
                 onMouseEnter={handleMouseEnter}
@@ -125,7 +125,7 @@ const Flexboard: FC<Props> = (props: Props) => {
                 style={{ ...props.resizerStyle }}
               />
             )}
-            {props.draggable && props.resizerType === ResizerTypes.gutterlane && (
+            {props.draggable && props.resizerType === ResizerType.gutterlane && (
               <div
                 className="app-flexboard-resizer"
                 onMouseEnter={handleMouseEnter}
@@ -161,7 +161,7 @@ const Flexboard: FC<Props> = (props: Props) => {
             onMouseDown={(e) => {
               return e.preventDefault();
             }}>
-            {props.draggable && props.resizerType === ResizerTypes.line && (
+            {props.draggable && props.resizerType === ResizerType.line && (
               <div
                 className="app-flexboard-resizer"
                 onMouseEnter={handleMouseEnter}
@@ -174,7 +174,7 @@ const Flexboard: FC<Props> = (props: Props) => {
                 }}
               />
             )}
-            {props.draggable && props.resizerType === ResizerTypes.shadowline && (
+            {props.draggable && props.resizerType === ResizerType.shadowline && (
               <div
                 className="app-flexboard-resizer"
                 onMouseEnter={handleMouseEnter}
@@ -188,7 +188,7 @@ const Flexboard: FC<Props> = (props: Props) => {
                 }}
               />
             )}
-            {props.draggable && props.resizerType === ResizerTypes.lane && (
+            {props.draggable && props.resizerType === ResizerType.lane && (
               <div
                 className="app-flexboard-resizer"
                 onMouseEnter={handleMouseEnter}
@@ -197,7 +197,7 @@ const Flexboard: FC<Props> = (props: Props) => {
                 style={{ ...props.resizerStyle }}
               />
             )}
-            {props.draggable && props.resizerType === ResizerTypes.gutterlane && (
+            {props.draggable && props.resizerType === ResizerType.gutterlane && (
               <div
                 className="app-flexboard-resizer"
                 onMouseEnter={handleMouseEnter}
@@ -229,7 +229,7 @@ Flexboard.defaultProps = {
   minWidth: 150,
   maxWidth: 300,
   draggable: false,
-  resizerType: ResizerTypes.line
+  resizerType: ResizerType.line
 };
 
 export default Flexboard;

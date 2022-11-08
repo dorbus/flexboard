@@ -2,10 +2,13 @@ import { Story } from '@storybook/react';
 import { Meta } from '@storybook/react/types-6-0';
 import React from 'react';
 
-import Flexboard from './Flexboard';
-import { Position, ResizerTypes } from './Flexboard.enums';
-import FlexboardFrame from './FlexboardFrame';
-import FlexboardProvider from './FlexboardProvider';
+import {
+  Flexboard,
+  FlexboardProvider,
+  FlexboardFrame,
+  Position,
+  ResizerType
+} from '../../components';
 
 export default {
   title: 'Components/Flexboard',
@@ -24,7 +27,7 @@ const Template: Story = () => {
         maxWidth={600}
         flexboardStyle={{ backgroundColor: '#f2f3f4' }}
         resizerStyle={{ backgroundColor: 'pink' }}
-        resizerType={ResizerTypes.gutterlane}>
+        resizerType={ResizerType.gutterlane}>
         <center>
           <h2>Flexboard Content</h2>
         </center>
