@@ -2,10 +2,6 @@
   "author": "Divyanshu Shekhar <imdshekhar@gmail.com>",
   "name": "@DevsOnReact/flexboard",
   "version": "1.0.0",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DevsOnReact/flexboard.git"
