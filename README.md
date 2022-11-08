@@ -23,7 +23,7 @@
 
 <img alt="Github Repo Sponsors" src="https://img.shields.io/github/sponsors/dorbus?style=plastic)">
 
-<h4>React component library for re-sizable sidebars</h4>
+<h3>React component library for re-sizable sidebars</h3>
 
 </div>
 
@@ -31,7 +31,9 @@
 
 ## Demo
 
-![react-pro-sidebar](./img/flexboard-demo.gif)
+<div align="center">
+<img src="./img/flexboard-demo.gif" height=250 width=600 alt="Flexboard Logo">
+</div>
 
 <!-- Installation -->
 
