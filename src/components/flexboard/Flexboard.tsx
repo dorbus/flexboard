@@ -103,13 +103,14 @@ const Flexboard: FC<Props> = (props: Props) => {
     return (
       <div
         className="app-flexboard-resizer"
+        role="presentation"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseDown={startResizing}
         style={style}>
         {type === ResizerType.gutterlane && gutterLane}
       </div>
-    );
+    ) as ReactElement;
   };
 
   const Sidebar = (position: Position) => {
