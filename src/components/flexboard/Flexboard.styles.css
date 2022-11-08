@@ -1,7 +1,6 @@
 .app-container {
   display: flex;
   flex-direction: row;
-  box-shadow: -8px 2px 22px -7px rgba(0, 0, 0, 0.25);
 }
 
 .app-flexboard {
