@@ -161,14 +161,13 @@ import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position } f
 
 ## Stargazers
 
-[![Stargazers repo roster for @dorbus/flexboard](https://reporoster.com/stars/dorbus/flexboard)](https://github.com/dorbus/flexboard/stargazers)
+[![Stargazers repo roster for @dorbus/flexboard](https://reporoster.com/stars/dark/dorbus/flexboard)](https://github.com/dorbus/flexboard/stargazers)
 
 ## Forkers
 
 [![Forkers repo roster for @dorbus/flexboard](https://reporoster.com/forks/dark/dorbus/flexboard)](https://github.com/dorbus/flexboard/network/members)
 
 <!-- License -->
+## Copyright & License
 
-## License
-
-[ISC](LICENSE) © 2022 Dorbus.
+Code and documentation Copyright (c) [ISC](LICENSE) © 2022 Dorbus.
