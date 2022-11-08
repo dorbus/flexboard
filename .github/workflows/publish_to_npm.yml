@@ -24,6 +24,8 @@ jobs:
 
       - name: Publish to NPM 📦
         run: |
+          npm config set scope devsonreact
+          npm config set access public --global
           npm config set //registry.npmjs.org/:_authToken ${NODE_AUTH_TOKEN}
           npm publish --ignore-scripts
         env:
