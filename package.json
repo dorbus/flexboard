@@ -1,7 +1,7 @@
 {
   "name": "@dorbus/flexboard",
   "description": "React component library for re-sizable sidebars",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Divyanshu Shekhar <imdshekhar@gmail.com>",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
