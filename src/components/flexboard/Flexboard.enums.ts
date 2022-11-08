@@ -8,5 +8,5 @@ export enum ResizerTypes {
   line = 'line',
   shadowline = 'shadowline',
   lane = 'lane',
-  gutterlane = 'gutterlan'
+  gutterlane = 'gutterlane'
 }

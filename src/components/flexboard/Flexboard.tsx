@@ -12,7 +12,7 @@ interface Props {
   minWidth?: number;
   maxWidth?: number;
   draggable?: boolean;
-  sidebarStyle?: React.CSSProperties;
+  flexboardStyle?: React.CSSProperties;
   resizerType?: ResizerTypes;
   resizerStyle?: React.CSSProperties;
 }
@@ -83,7 +83,7 @@ const Flexboard: FC<Props> = (props: Props) => {
               width: flexboardWidth,
               minWidth: props.minWidth,
               maxWidth: props.maxWidth,
-              ...props.sidebarStyle
+              ...props.flexboardStyle
             }}
             onMouseDown={(e) => {
               return e.preventDefault();
@@ -97,7 +97,7 @@ const Flexboard: FC<Props> = (props: Props) => {
                 onMouseDown={startResizing}
                 style={{
                   width: isHovering ? '5px' : '',
-                  background: 'none',
+                  background: 'none !important',
                   ...props.resizerStyle
                 }}
               />
@@ -110,8 +110,8 @@ const Flexboard: FC<Props> = (props: Props) => {
                 onMouseDown={startResizing}
                 style={{
                   width: isHovering ? '5px' : '',
-                  boxShadow: isHovering ? '2pxResizerTypes 2px 2px 1px rgba(0, 0, 0, 0.2)' : '',
-                  background: isHovering ? 'none' : '',
+                  boxShadow: isHovering ? '2px 2px 2px 1px rgba(0, 0, 0, 0.2)' : '',
+                  background: isHovering ? 'none !important' : '',
                   ...props.resizerStyle
                 }}
               />
@@ -132,7 +132,15 @@ const Flexboard: FC<Props> = (props: Props) => {
                 onMouseLeave={handleMouseLeave}
                 onMouseDown={startResizing}
                 style={{ ...props.resizerStyle }}>
-                <div className="gutter"></div>
+                <div
+                  className="gutter"
+                  style={{
+                    height: isHovering ? '25px' : '',
+                    width: isHovering ? '100%' : '',
+                    backgroundColor: isHovering ? 'grey' : '',
+                    borderLeft: isHovering ? 'dashed black' : '',
+                    borderRight: isHovering ? 'dashed black' : ''
+                  }}></div>
               </div>
             )}
           </div>
@@ -148,7 +156,7 @@ const Flexboard: FC<Props> = (props: Props) => {
               width: flexboardWidth,
               minWidth: props.minWidth,
               maxWidth: props.maxWidth,
-              ...props.sidebarStyle
+              ...props.flexboardStyle
             }}
             onMouseDown={(e) => {
               return e.preventDefault();

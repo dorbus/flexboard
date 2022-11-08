@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DevsOnReact/flexboard.git"
+    "url": "git+https://github.com/dorbus/flexboard.git"
   },
   "bugs": {
-    "url": "https://github.com/DevsOnReact/flexboard/issues"
+    "url": "https://github.com/dorbus/flexboard/issues"
   },
-  "homepage": "https://github.com/DevsOnReact/flexboard#readme",
+  "homepage": "https://github.com/dorbus/flexboard#readme",
   "private": false,
   "license": "ISC",
   "keywords": [

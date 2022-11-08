@@ -17,40 +17,23 @@ const Template: Story = () => {
   return (
     <FlexboardProvider>
       <Flexboard
-        sidebarStyle={{ backgroundColor: '#f2f3f4' }}
         direction={Position.left}
-        width={400}
         draggable={true}
+        width={400}
         minWidth={200}
         maxWidth={600}
-        resizerType={ResizerTypes.line}>
-        <ul>
-          <li>
-            <h2>Hey</h2>
-          </li>
-          <li>
-            <h2>Ananya Das,</h2>
-          </li>
-          <li>
-            <h2>I love you ❤️</h2>
-          </li>
-          <li>
-            <h2>Why you did this to me? 💔😭 </h2>
-          </li>
-        </ul>
+        flexboardStyle={{ backgroundColor: '#f2f3f4' }}
+        resizerStyle={{ backgroundColor: 'pink' }}
+        resizerType={ResizerTypes.gutterlane}>
+        <center>
+          <h2>Flexboard Content</h2>
+        </center>
       </Flexboard>
       <FlexboardFrame>
-        <h1>Aditya Abrol tum maa chuda bsdk.........</h1>
+        <center>
+          <h2>Frame Content</h2>
+        </center>
       </FlexboardFrame>
-      <Flexboard
-        sidebarStyle={{ backgroundColor: '#f2f3f4' }}
-        direction={Position.right}
-        width={400}
-        draggable={true}
-        minWidth={200}
-        maxWidth={600}
-        resizerType={ResizerTypes.gutterlane}
-        resizerStyle={{ backgroundColor: 'pink' }}></Flexboard>
     </FlexboardProvider>
   );
 };
