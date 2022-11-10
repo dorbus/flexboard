@@ -55,27 +55,93 @@ npm install @dorbus/flexboard
 
 ## Usage
 
-Import `FlexboardProvider`, `FlexboardFrame` and `Flexboard` and wrap `Flexboard` and `FlexboardFrame` inside `FlexboardProvider` as shown below:
+To use Flexboard in your application first import `FlexboardProvider`, `FlexboardFrame` and `Flexboard`.
+
+### Left Sidebar
+
+To use Left Sidebar `FlexboardFrame` component must be used below the `Flexboard` component inside `FlexboardProvider` and the direction prop in `Flexboard` component should be set to left.
 
 ```tsx
-import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position } from '@dorbus/flexboard';
-<FlexboardProvider>
-        <Flexboard
-          direction={Position.left}
-          draggable={true}
-          width={400}
-          minWidth={200}
-          maxWidth={600}
-          flexboardStyle={{ backgroundColor: "#f2f3f4" }}
-          resizerStyle={{ backgroundColor: "pink" }}
-          resizerType={ResizerType.gutterlane}
-        >
-          <div>Flexboard Content</div>
-        </Flexboard>
-        <FlexboardFrame>
-          <div>Frame Content</div>
-        </FlexboardFrame>
-      </FlexboardProvider>
+import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position from '@dorbus/flexboard';
+    <FlexboardProvider>
+            <Flexboard
+            direction={Position.left}
+            draggable={true}
+            width={400}
+            minWidth={200}
+            maxWidth={600}
+            flexboardStyle={{ backgroundColor: "#f2f3f4" }}
+            resizerStyle={{ backgroundColor: "pink" }}
+            resizerType={ResizerType.gutterlane}
+            >
+                <div>Flexboard Content</div>
+            </Flexboard>
+            <FlexboardFrame>
+                <div>Frame Content</div>
+            </FlexboardFrame>
+    </FlexboardProvider>
+```
+
+### Right Sidebar
+
+To use Right Sidebar `FlexboardFrame` component must be used above the `Flexboard` component inside `FlexboardProvider` and the direction prop in `Flexboard` component should be set to right.
+
+```tsx
+import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position from '@dorbus/flexboard';
+    <FlexboardProvider>
+            <FlexboardFrame>
+                <div>Frame Content</div>
+            </FlexboardFrame>
+            <Flexboard
+            direction={Position.right}
+            draggable={true}
+            width={400}
+            minWidth={200}
+            maxWidth={600}
+            flexboardStyle={{ backgroundColor: "#f2f3f4" }}
+            resizerStyle={{ backgroundColor: "pink" }}
+            resizerType={ResizerType.gutterlane}
+            >
+                <div>Flexboard Content</div>
+            </Flexboard>
+    </FlexboardProvider>
+```
+
+### Left-Right Sidebar
+
+To use Left-Right Sidebar `FlexboardFrame` component must be used in between the `Flexboard` left and right components inside `FlexboardProvider`.
+
+```tsx
+import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position from '@dorbus/flexboard';
+    <FlexboardProvider>
+            <Flexboard
+            direction={Position.left}
+            draggable={true}
+            width={400}
+            minWidth={200}
+            maxWidth={600}
+            flexboardStyle={{ backgroundColor: "#f2f3f4" }}
+            resizerStyle={{ backgroundColor: "pink" }}
+            resizerType={ResizerType.gutterlane}
+            >
+                <div>Left-Sidebar</div>
+            </Flexboard>
+            <FlexboardFrame>
+                <div>Frame Content</div>
+            </FlexboardFrame>
+             <Flexboard
+            direction={Position.right}
+            draggable={true}
+            width={400}
+            minWidth={200}
+            maxWidth={600}
+            flexboardStyle={{ backgroundColor: "#f2f3f4" }}
+            resizerStyle={{ backgroundColor: "pink" }}
+            resizerType={ResizerType.gutterlane}
+            >
+                <div>Right-Sidebar</div>
+            </Flexboard>
+    </FlexboardProvider>
 ```
 
 <!-- API -->
