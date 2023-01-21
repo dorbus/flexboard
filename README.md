@@ -95,7 +95,7 @@ import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position } f
 To use Right Sidebar `FlexboardFrame` component must be used above the `Flexboard` component inside `FlexboardProvider` and the direction prop in `Flexboard` component should be set to right.
 
 ```tsx
-import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position from '@dorbus/flexboard';
+import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position } from '@dorbus/flexboard';
     <FlexboardProvider>
             <FlexboardFrame>
                 <div>Frame Content</div>
@@ -120,7 +120,7 @@ import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position fro
 To use Left-Right Sidebar `FlexboardFrame` component must be used in between the `Flexboard` left and right components inside `FlexboardProvider`.
 
 ```tsx
-import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position from '@dorbus/flexboard';
+import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position } from '@dorbus/flexboard';
     <FlexboardProvider>
             <Flexboard
             direction={Position.left}
