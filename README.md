@@ -37,7 +37,7 @@
 
 <!-- Demo -->
 
-## Demo
+## <a href="https://dorbus.github.io/flexboard-example/">Demo</a>
 
 <div align="center">
 <img src="./img/flexboard-demo.gif" height=250 width=600 alt="Flexboard Logo">
