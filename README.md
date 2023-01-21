@@ -27,6 +27,14 @@
 
 </div>
 
+<!-- Flexboard-Skeleton -->
+
+## Flexboard-Skeleton
+
+<div align="center">
+<img src="./img/flexboard-skeleton.gif" height=250 width=600 alt="Flexboard Logo">
+</div>
+
 <!-- Demo -->
 
 ## Demo
@@ -62,7 +70,7 @@ To use Flexboard in your application first import `FlexboardProvider`, `Flexboar
 To use Left Sidebar `FlexboardFrame` component must be used below the `Flexboard` component inside `FlexboardProvider` and the direction prop in `Flexboard` component should be set to left.
 
 ```tsx
-import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position from '@dorbus/flexboard';
+import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position } from '@dorbus/flexboard';
     <FlexboardProvider>
             <Flexboard
             direction={Position.left}
