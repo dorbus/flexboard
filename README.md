@@ -30,10 +30,7 @@
 <!-- Demo -->
 
 ## <a href="https://dorbus.github.io/flexboard-example/">Demo</a>
-
-<div align="center">
-<img src="./img/flexboard-demo.gif" height=250 width=600 alt="Flexboard Logo">
-</div>
+https://user-images.githubusercontent.com/74519511/213860077-bba4acd8-119d-47a0-a0be-ac8da8e37b4c.mp4
 
 <!-- Installation -->
 
