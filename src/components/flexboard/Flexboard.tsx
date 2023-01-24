@@ -13,6 +13,37 @@ import './Flexboard.styles.css';
 // Importing Sidebar enums
 import { Position, ResizerType } from './Flexboard.enums';
 import { line, shadowline } from './ResizerStyle';
+import styled from 'styled-components';
+
+const FlexResizer = styled.div`
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-self: flex-end;
+  cursor: col-resize;
+  resize: horizontal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7px;
+`;
+
+const Flex = styled.div`
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  border-right: #e9e9e9 1px solid;
+  flex-direction: row;
+  background: #ffffff;
+  z-index: 2;
+
+  .app-flexboard-content {
+    flex: 1;
+  }
+
+  &:hover ${FlexResizer} {
+    background: #c1c3c5b4;
+  }
+`;
 
 interface Props {
   direction?: Position;
@@ -101,7 +132,7 @@ const Flexboard: FC<Props> = (props: Props) => {
     );
 
     return (
-      <div
+      <FlexResizer
         className="app-flexboard-resizer"
         role="presentation"
         onMouseEnter={handleMouseEnter}
@@ -109,14 +140,14 @@ const Flexboard: FC<Props> = (props: Props) => {
         onMouseDown={startResizing}
         style={style}>
         {type === ResizerType.gutterlane && gutterLane}
-      </div>
+      </FlexResizer>
     ) as ReactElement;
   };
 
   const Sidebar = (position: Position) => {
     return (
       <>
-        <div
+        <Flex
           role="presentation"
           ref={flexboardRef}
           className="app-flexboard"
@@ -133,7 +164,7 @@ const Flexboard: FC<Props> = (props: Props) => {
           {/* Sidebar Content */}
           <div className="app-flexboard-content">{props.children ? props.children : <></>}</div>
           {position === Position.left && flexboardResizer(props.resizerType ?? ResizerType.line)}
-        </div>
+        </Flex>
       </>
     );
   };
