@@ -131,7 +131,6 @@ const Flexboard: FC<Props> = (props: Props) => {
 
     return (
       <FlexResizer
-        className="app-flexboard-resizer"
         role="presentation"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -148,7 +147,6 @@ const Flexboard: FC<Props> = (props: Props) => {
         <Flex
           role="presentation"
           ref={flexboardRef}
-          className="app-flexboard"
           style={{
             width: flexboardWidth,
             minWidth: props.minWidth,
