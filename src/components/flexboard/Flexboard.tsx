@@ -8,8 +8,6 @@ import React, {
   ReactElement
 } from 'react';
 
-// Importing sidebar styles
-import './Flexboard.styles.css';
 // Importing Sidebar enums
 import { Position, ResizerType } from './Flexboard.enums';
 import { line, shadowline } from './ResizerStyle';

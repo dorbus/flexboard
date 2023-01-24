@@ -1,6 +1,5 @@
 import React, { ReactNode, FC } from 'react';
 import styled from 'styled-components';
-import './Flexboard.styles.css';
 
 const Container = styled.div`
   display: flex;
