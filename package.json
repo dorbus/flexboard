@@ -35,7 +35,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -63,6 +64,7 @@
     "@types/jest": "^29.2.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.7",
+    "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
     "babel-jest": "^29.2.1",
