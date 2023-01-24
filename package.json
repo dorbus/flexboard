@@ -1,7 +1,7 @@
 {
   "name": "@dorbus/flexboard",
-  "description": "React component library for re-sizable sidebars",
-  "version": "1.1.0",
+  "description": "A react component library for resizable sidebars, to easily add adjustable sidebars",
+  "version": "1.1.2",
   "author": "Divyanshu Shekhar <imdshekhar@gmail.com>",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -17,11 +17,6 @@
   "homepage": "https://github.com/dorbus/flexboard#readme",
   "private": false,
   "license": "ISC",
-  "keywords": [
-    "react",
-    "components",
-    "sidebar"
-  ],
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -112,5 +107,23 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
-  }
+  },
+  "keywords": [
+    "react",
+    "component",
+    "flexboard",
+    "dual-sidebar",
+    "react-component",
+    "react-sidebar",
+    "layout",
+    "sidebar",
+    "collapsed",
+    "resizable-sidebar",
+    "react-resizable-sidebar",
+    "side-menu",
+    "react-side-menu",
+    "resizable",
+    "draggable-sidebar",
+    "sidebar-frame"
+  ]
 }

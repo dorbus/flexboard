@@ -27,10 +27,21 @@
 
 </div>
 
+<!-- Flexboard-Skeleton -->
+
+## Flexboard-Skeleton
+
+<div align="center">
+<img src="./img/flexboard-skeleton.gif" height=250 width=600 alt="Flexboard Logo">
+</div>
+
 <!-- Demo -->
 
 ## <a href="https://dorbus.github.io/flexboard-example/">Demo</a>
-https://user-images.githubusercontent.com/74519511/213860077-bba4acd8-119d-47a0-a0be-ac8da8e37b4c.mp4
+
+<div align="center">
+<img src="./img/flexboard-demo.gif" height=250 width=600 alt="Flexboard Logo">
+</div>
 
 <!-- Installation -->
 
@@ -59,7 +70,7 @@ To use Flexboard in your application first import `FlexboardProvider`, `Flexboar
 To use Left Sidebar `FlexboardFrame` component must be used below the `Flexboard` component inside `FlexboardProvider` and the direction prop in `Flexboard` component should be set to left.
 
 ```tsx
-import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position from '@dorbus/flexboard';
+import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position } from '@dorbus/flexboard';
     <FlexboardProvider>
             <Flexboard
             direction={Position.left}
@@ -84,7 +95,7 @@ import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position fro
 To use Right Sidebar `FlexboardFrame` component must be used above the `Flexboard` component inside `FlexboardProvider` and the direction prop in `Flexboard` component should be set to right.
 
 ```tsx
-import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position from '@dorbus/flexboard';
+import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position } from '@dorbus/flexboard';
     <FlexboardProvider>
             <FlexboardFrame>
                 <div>Frame Content</div>
@@ -109,7 +120,7 @@ import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position fro
 To use Left-Right Sidebar `FlexboardFrame` component must be used in between the `Flexboard` left and right components inside `FlexboardProvider`.
 
 ```tsx
-import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position from '@dorbus/flexboard';
+import { Flexboard, FlexboardProvider, FlexboardFrame, ResizerType, Position } from '@dorbus/flexboard';
     <FlexboardProvider>
             <Flexboard
             direction={Position.left}
