@@ -7,11 +7,11 @@ import React, {
   ReactNode,
   ReactElement
 } from 'react';
+import styled from 'styled-components';
 
 // Importing Sidebar enums
 import { Position, ResizerType } from './Flexboard.enums';
 import { line, shadowline } from './ResizerStyle';
-import styled from 'styled-components';
 
 const FlexResizer = styled.div`
   flex-grow: 0;
