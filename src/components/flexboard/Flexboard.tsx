@@ -13,36 +13,6 @@ import styled from 'styled-components';
 import { Position, ResizerType } from './Flexboard.enums';
 import { line, shadowline } from './ResizerStyle';
 
-const FlexResizer = styled.div`
-  flex-grow: 0;
-  flex-shrink: 0;
-  justify-self: flex-end;
-  cursor: col-resize;
-  resize: horizontal;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 7px;
-`;
-
-const Flex = styled.div`
-  flex-grow: 0;
-  flex-shrink: 0;
-  display: flex;
-  border-right: #e9e9e9 1px solid;
-  flex-direction: row;
-  background: #ffffff;
-  z-index: 2;
-
-  .app-flexboard-content {
-    flex: 1;
-  }
-
-  &:hover ${FlexResizer} {
-    background: #c1c3c5b4;
-  }
-`;
-
 interface Props {
   direction?: Position;
   children?: ReactNode | ReactNode[];
@@ -61,6 +31,40 @@ const Flexboard: FC<Props> = (props: Props) => {
   const [isResizing, setIsResizing] = useState<boolean>(false);
   const [flexboardWidth, setFlexboardWidth] = useState<number>(props.width ?? 0);
   const [isHovering, setIsHovering] = useState(false);
+
+  // styled components
+  const FlexResizer = styled.div`
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-self: flex-end;
+    cursor: col-resize;
+    resize: horizontal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7px;
+  `;
+
+  const Flex = styled.div`
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    border-right: #e9e9e9 1px solid;
+    flex-direction: row;
+    background: #ffffff;
+    z-index: 2;
+    width: ${flexboardWidth}px;
+    min-width: ${props.minWidth ?? 0}px;
+    max-width: ${props.maxWidth ?? 0}px;
+
+    .app-flexboard-content {
+      flex: 1;
+    }
+
+    &:hover ${FlexResizer} {
+      background: #c1c3c5b4;
+    }
+  `;
 
   // Sets isResizing to true
   const startResizing = useCallback(() => {
@@ -147,12 +151,7 @@ const Flexboard: FC<Props> = (props: Props) => {
         <Flex
           role="presentation"
           ref={flexboardRef}
-          style={{
-            width: flexboardWidth,
-            minWidth: props.minWidth,
-            maxWidth: props.maxWidth,
-            ...props.flexboardStyle
-          }}
+          style={props.flexboardStyle}
           onMouseDown={(e) => {
             return e.preventDefault();
           }}>
