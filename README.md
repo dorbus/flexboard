@@ -32,7 +32,7 @@
 ## Flexboard-Skeleton
 
 <div align='center'>
-<img width="600" height="350" alt="icon" src="https://github.com/dorbus/flexboard/assets/74519511/074b0691-95c7-42db-b137-34e6bbc171c4">
+<img width="600" height="300" alt="icon" src="https://github.com/dorbus/flexboard/assets/74519511/074b0691-95c7-42db-b137-34e6bbc171c4">
 </div>
 
 <!-- Demo -->
@@ -40,7 +40,7 @@
 ## <a href="https://dorbus.github.io/flexboard-example/">Demo</a>
 
 <div align='center'>
-<img width="700" height="400" alt="icon" src="https://github.com/dorbus/flexboard/assets/74519511/7ae9f947-79bd-4b5d-a910-57c48e2c711e">
+<img width="700" height="300" alt="icon" src="https://github.com/dorbus/flexboard/assets/74519511/7ae9f947-79bd-4b5d-a910-57c48e2c711e">
 </div>
 
 <!-- Installation -->
