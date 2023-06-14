@@ -1,4 +1,7 @@
-![Flexboard Logo](./img/icon.png)
+<div align='center'>
+<img width="300" height="300" alt="icon" src="https://github.com/dorbus/flexboard/assets/74519511/27b6f40f-6b4a-4ea3-b8c6-ed56b7fda529">
+</div>
+<br>
 
 <!-- Repository stats -->
 
@@ -28,13 +31,17 @@
 
 ## Flexboard-Skeleton
 
-![Flexboard Logo](./img/skeleton.gif)
+<div align='center'>
+<img width="600" height="350" alt="icon" src="https://github.com/dorbus/flexboard/assets/74519511/074b0691-95c7-42db-b137-34e6bbc171c4">
+</div>
 
 <!-- Demo -->
 
 ## <a href="https://dorbus.github.io/flexboard-example/">Demo</a>
 
-![Flexboard Logo](./img/demo.gif)
+<div align='center'>
+<img width="700" height="400" alt="icon" src="https://github.com/dorbus/flexboard/assets/74519511/7ae9f947-79bd-4b5d-a910-57c48e2c711e">
+</div>
 
 <!-- Installation -->
 
