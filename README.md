@@ -1,5 +1,5 @@
 <div align="center">
-<img src="./img/Flexboard_icon.png" height=300 width=300 alt="Flexboard Logo">
+<img src="./img/icon.png" height=300 width=300 alt="Flexboard Logo">
 <h1>Flexboard</h1>
 </div>
 
@@ -32,7 +32,7 @@
 ## Flexboard-Skeleton
 
 <div align="center">
-<img src="./img/flexboard-skeleton.gif" height=250 width=600 alt="Flexboard Logo">
+<img src="./img/skeleton.gif" height=250 width=600 alt="Flexboard Logo">
 </div>
 
 <!-- Demo -->
@@ -40,7 +40,7 @@
 ## <a href="https://dorbus.github.io/flexboard-example/">Demo</a>
 
 <div align="center">
-<img src="./img/flexboard-demo.gif" height=250 width=600 alt="Flexboard Logo">
+<img src="./img/demo.gif" height=250 width=600 alt="Flexboard Logo">
 </div>
 
 <!-- Installation -->
